@@ -40,7 +40,7 @@ tasks.withType(JavaCompile).configureEach {
     //Once I know the java.security.jgss and sun.security.jgss are fully removed then
     //then we can comment this guy as enforced by toolchain.
     //options.compilerArgs.removeIf { it.startsWith("--release") }
-    options.compilerArgs -= ["--release"]
+    //options.compilerArgs -= ["--release"]
 }
 
 // 3. Include dependencies and prioritize custom libraries
