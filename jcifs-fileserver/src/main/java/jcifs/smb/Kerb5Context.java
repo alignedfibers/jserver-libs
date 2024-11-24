@@ -358,10 +358,11 @@ class Kerb5Context implements SSPContext {
      * 
      * At the time of the first implementation only a test on Oracle JDK was
      * done.
+     *
      */
 
-    private static final String OPENJDK_JGSS_INQUIRE_TYPE_CLASS = "com.sun.security.jgss.InquireType";
-    private static final String OPENJDK_JGSS_EXT_GSSCTX_CLASS = "com.sun.security.jgss.ExtendedGSSContext";
+    private static final String OPENJDK_JGSS_INQUIRE_TYPE_CLASS = "jcifs.pac.InquireType";
+    private static final String OPENJDK_JGSS_EXT_GSSCTX_CLASS = "jcifs.pac.ExtendedGSSContext";
 
     private static final String IBM_JGSS_INQUIRE_TYPE_CLASS = "com.ibm.security.jgss.InquireType";
     private static final String IBM_JGSS_EXT_GSSCTX_CLASS = "com.ibm.security.jgss.ExtendedGSSContext";
@@ -386,7 +387,7 @@ class Kerb5Context implements SSPContext {
             NoSuchMethodException |
             RuntimeException ex ) {
             if ( log.isDebugEnabled() ) {
-                log.debug("Failed to initalize ExtendedGSSContext initializdation for OracleJDK / OpenJDK", ex);
+                log.debug("Failed to initialize ExtendedGSSContext initializdation for OracleJDK / OpenJDK", ex);
             }
         }
 

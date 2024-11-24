@@ -16,7 +16,8 @@
  */
 package jcifs.pac.kerberos;
 
-
+import com.sun.security.jgss.ExtendedGSSContext;
+import com.sun.security.jgss.InquireType;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
