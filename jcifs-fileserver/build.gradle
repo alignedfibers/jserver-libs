@@ -1,4 +1,4 @@
-description = 'NanoHttpd-Webserver'
+description = 'jCIFS-Fileserver'
 apply from: "$rootDir/common.gradle"
 usejavapluginconfig(project)
 dependencies {
@@ -30,13 +30,17 @@ tasks.jar {
 // 2. Add exports to avoid visibility issues during compile
 tasks.withType(JavaCompile).configureEach {
     options.compilerArgs += [
-            "--add-exports", "java.security.jgss/sun.security.krb5=ALL-UNNAMED",
+            /*"--add-exports", "java.security.jgss/sun.security.krb5=ALL-UNNAMED",
             "--add-exports", "java.security.jgss/sun.security.jgss=ALL-UNNAMED",
             "--add-exports", "java.security.jgss/org.ietf.jgss=ALL-UNNAMED",
             "--add-exports", "java.security.jgss/sun.security.jgss.krb5=ALL-UNNAMED",
             "--add-exports", "java.security.jgss/sun.security.krb5.internal=ALL-UNNAMED",
-            "--add-exports", "java.security.jgss/sun.security.krb5.internal.crypto=ALL-UNNAMED",
+            "--add-exports", "java.security.jgss/sun.security.krb5.internal.crypto=ALL-UNNAMED"*/
     ]
+    //Once I know the java.security.jgss and sun.security.jgss are fully removed then
+    //then we can comment this guy as enforced by toolchain.
+    //options.compilerArgs.removeIf { it.startsWith("--release") }
+    options.compilerArgs -= ["--release"]
 }
 
 // 3. Include dependencies and prioritize custom libraries
