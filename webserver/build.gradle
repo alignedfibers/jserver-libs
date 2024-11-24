@@ -5,3 +5,10 @@ dependencies {
 	implementation project(':nanohttpd')
 	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
 }
+tasks.register('runSimpleWebServer', JavaExec) {
+	group = 'application'
+	description = 'Run the SimpleWebServer example'
+	mainClass.set('org.nanohttpd.webserver.SimpleWebServer')
+	classpath = sourceSets.main.runtimeClasspath
+	standardInput = System.in // Keeps the app running and listens for input
+}

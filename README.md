@@ -1,4 +1,20 @@
+  ```bash
+  #Build with gradle, to use the latest, I have not fully updated JDK and plugins in the Maven build yet.
+  #Test still run and pass using gradle, but I still thing the mvn build is cleaner.
+  ./gradlew clean build
+  ./gradlew :nano-webserver:runSimpleWebServer
+  
+  #If you want to be able to follow the original readme, you have to compile with those instructions first.
+  #Problem with compiling with Gradle, then trying to use Maven is it tries to use newer maven plugin 3.5 for some reason
+  #Once I update the Maven Build for compilation with JDK 11 or soon to be JDK 17 it works without issues.
+  #The .java files have had all depracations and errors that made this project not compatible with jdk 11 corrected.
+  #Build files have also been updated to meet the requirements of Gradle 8.9, right now AGP dependency on JDK 17 holds it back.
+  #JDK 11 is currently working max ALGP/AAGP compatible is with JDK 11 is 7.0.1 which caused a downgrade grade to Gradle 7.0.2
+  ```
+  
+
 ## NanoHTTPD – a tiny web server in Java
+
 
 *NanoHTTPD* is a light-weight HTTP server designed for embedding in other applications, released under a Modified BSD licence.
 
