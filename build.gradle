@@ -11,10 +11,20 @@ allprojects {
 	group = 'org.nanohttpd'
 	version = '2.3.2-SNAPSHOT'
 }
-
 subprojects {
 }
+/*tasks.register('testPlugin') {
+	doLast {
+		println 'Testing if my composeRollup plugin is loaded...'
 
+		// Check if the plugin-created "hello" task exists
+		if (tasks.findByName('hello')) {
+			println 'MyBinaryPlugin successfully created the "hello" task!'
+		} else {
+			println 'MyBinaryPlugin did NOT create the "hello" task. Check your plugin configuration.'
+		}
+	}
+}*/
 /*task wrapper(type: Wrapper) {
 	//gradleVersion = "4.4.1"
 	gradleVersion = "7.0.2"

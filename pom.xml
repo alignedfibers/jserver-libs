@@ -94,13 +94,13 @@
 		<url>https://github.com/NanoHttpd/nanohttpd/issues</url>
 	</issueManagement>
 	<modules>
-		<module>core</module>
-		<module>samples</module>
-		<module>webserver</module>
-		<module>websocket</module>
-		<module>markdown-plugin</module>
-		<module>nanolets</module>
-		<module>fileupload</module>
+		<module>nanohttpd-core</module>
+		<module>nanohttpd-samples</module>
+		<module>nanohttpd-webserver</module>
+		<module>nanohttpd-websocket</module>
+		<module>nanohttpd-markdown-plugin</module>
+		<module>nanohttpd-nanolets</module>
+		<module>nanohttpd-fileupload</module>
 	</modules>
 	<licenses>
 		<license>

@@ -1,0 +1,20 @@
+<build>
+    <plugins>
+        <!-- Android Plugin -->
+        <plugin>
+            <groupId>com.simpligility.maven.plugins</groupId>
+            <artifactId>android-maven-plugin</artifactId>
+            <version>4.5.0</version>
+            <extensions>true</extensions>
+        </plugin>
+
+        <!-- Exclude Maven Compiler Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>

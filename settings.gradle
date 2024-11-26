@@ -3,8 +3,11 @@ pluginManagement {
         google()
         mavenCentral()
     }
+    //includeBuild('plugin-composeRollup')
 }
+
 rootProject.name = 'jserver-libs'
+
 include ':nanohttpd'
 include ':nanohttpd-samples'
 include ':nanohttpd-webserver'
@@ -12,16 +15,53 @@ include ':nanohttpd-websocket'
 include ':nanohttpd-webserver-markdown-plugin'
 include ':nanohttpd-nanolets'
 include ':nanohttpd-apache-fileupload'
-include ':nanohttpd-android-lib'
+include ':jservers-alib'
 include ':jcifs-fileserver'
+include ':jservers-jlib'
+//include ':plugin-composeR'
 
-project(':nanohttpd').projectDir = "$rootDir/core" as File
-project(':nanohttpd-samples').projectDir = "$rootDir/samples" as File
-project(':nanohttpd-webserver').projectDir = "$rootDir/webserver" as File
-project(':nanohttpd-websocket').projectDir = "$rootDir/websocket" as File
-project(':nanohttpd-webserver-markdown-plugin').projectDir = "$rootDir/markdown-plugin" as File
-project(':nanohttpd-nanolets').projectDir = "$rootDir/nanolets" as File
-project(':nanohttpd-apache-fileupload').projectDir = "$rootDir/fileupload" as File
-project(':nanohttpd-android-lib').projectDir = "$rootDir/android-app-lib" as File
+project(':nanohttpd').projectDir = "$rootDir/nanohttpd-core" as File
+project(':nanohttpd-samples').projectDir = "$rootDir/nanohttpd-samples" as File
+project(':nanohttpd-webserver').projectDir = "$rootDir/nanohttpd-webserver" as File
+project(':nanohttpd-websocket').projectDir = "$rootDir/nanohttpd-websocket" as File
+project(':nanohttpd-webserver-markdown-plugin').projectDir = "$rootDir/nanohttpd-markdown-plugin" as File
+project(':nanohttpd-nanolets').projectDir = "$rootDir/nanohttpd-nanolets" as File
+project(':nanohttpd-apache-fileupload').projectDir = "$rootDir/nanohttpd-fileupload" as File
+project(':jservers-alib').projectDir = "$rootDir/jservers-rollup-Alib" as File
 project(':jcifs-fileserver').projectDir = "$rootDir/jcifs-fileserver" as File
+project(':jservers-jlib').projectDir = "$rootDir/jservers-rollup-Jlib" as File
+//project(':plugin-composeR').projectDir = "$rootDir/plugin-composeRollup" as File
 
+/****
+        rootProject.properties.subprojectsList = [
+            'nanohttpd',
+            'nanohttpd-samples',
+            'nanohttpd-webserver',
+            'nanohttpd-websocket',
+            'nanohttpd-webserver-markdown-plugin',
+            'nanohttpd-nanolets',
+            'nanohttpd-apache-fileupload',
+            'nanohttpd-android-lib',
+            'jcifs-fileserver'
+    ]
+
+    rootProject.properties.projectDirs = [
+            'nanohttpd': "$rootDir/core",
+            'nanohttpd-samples': "$rootDir/samples",
+            'nanohttpd-webserver': "$rootDir/webserver",
+            'nanohttpd-websocket': "$rootDir/websocket",
+            'nanohttpd-webserver-markdown-plugin': "$rootDir/markdown-plugin",
+            'nanohttpd-nanolets': "$rootDir/nanolets",
+            'nanohttpd-apache-fileupload': "$rootDir/fileupload",
+            'nanohttpd-android-lib': "$rootDir/android-app-lib",
+            'jcifs-fileserver': "$rootDir/jcifs-fileserver"
+    ]
+
+rootProject.properties.subprojectsList.each { name ->
+    if (rootProject.properties.projectDirs.containsKey(name)) {
+        include ":$name"
+        project(":$name").projectDir = file(rootProject.properties.projectDirs[name])
+    }
+
+}
+****/

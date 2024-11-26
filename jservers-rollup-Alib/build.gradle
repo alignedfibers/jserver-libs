@@ -1,14 +1,31 @@
-description = 'LibNanoHttpd-Android'
+description = 'Jserver-AndroidLibrary-Rollup'
 apply from: "$rootDir/common.gradle"
 useandroidpluginconfig(project)
 dependencies {
     implementation project(':nanohttpd')
+    //Whole long story why applications are consumers and they are down stream and what I say here is upstream
+    //The short story is don't add upstream anything to downstream through you.
+    //The super short story is, always use implementation when adding your dependencies
+    //implementation project(':nanohttpd-webserver')
+    //implementation project(':nanohttpd-websocket')
     testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
+    testImplementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.2.5'
 }
 android {
     /*lintOptions {
         abortOnError false
     }*/
+    packagingOptions {
+        exclude ':nanohttpd'
+        exclude ':nanohttpd-nanolets'
+        exclude ':nanohttpd-webserver'
+        exclude ':nanohttpd-websocket'
+        exclude ':nanohttpd-samples'
+        exclude ':nanohttpd-webserver-markdown-plugin'
+        exclude ':jcifs-fileserver'
+        exclude ':nanohttpd-apache-fileupload'
+    }
+
     compileSdkVersion 33
     defaultConfig {
         //applicationId "org.nanohttpd.webserver"
