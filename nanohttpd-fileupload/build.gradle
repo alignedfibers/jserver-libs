@@ -9,6 +9,6 @@ dependencies {
 	
 	testImplementation project(':nanohttpd')
 	testImplementation group: 'javax.servlet', name: 'servlet-api', version: '2.5'
-	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
-	testImplementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.4.1'
+	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
+	testImplementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 }

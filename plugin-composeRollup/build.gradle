@@ -1,0 +1,44 @@
+/***
+ * Plugin repositories are required to be defined in settings.gradle
+ * moved the common build configs for all/subprojects to common.gradle ext scripts
+ */
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'java-gradle-plugin'
+group = 'dev.jtris'
+version = '0.0.1'
+
+gradlePlugin {
+    plugins {
+        composeRollup {
+            //I liked the naming of deliveryWrap for this plug better.
+            //composeRollup has the action statement though.
+            //I might be silly and decide to use wrapDelivery later.
+            //Better than packPayload
+            //Guy on the receiving end decomposeRollup,unpackPayload, signforDelivery
+            id = 'dev.jtris.gradleplugins.composeRollup'
+            implementationClass = 'dev.jtris.gradleplugins.composeRollup'
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    //jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
