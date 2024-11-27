@@ -1,4 +1,4 @@
-description = 'jCIFS-Fileserver'
+description = 'Java Common Internet File System'
 apply from: "$rootDir/common.gradle"
 usejavapluginconfig(project)
 dependencies {

@@ -1,9 +1,20 @@
 pluginManagement {
     repositories {
         google()
+        mavenLocal()
         mavenCentral()
     }
     //includeBuild('plugin-composeRollup')
+    dependencyResolutionManagement {
+        //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenLocal()
+            mavenCentral()
+            gradlePluginPortal()
+        }
+        repositories.each { println "Repository configured: $it.name Owner: ${it.getClass().name}" }
+    }
 }
 
 rootProject.name = 'jserver-libs'

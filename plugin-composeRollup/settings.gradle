@@ -1,0 +1,16 @@
+pluginManagement {
+    dependencyResolutionManagement {
+        //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            mavenLocal()
+            mavenCentral()
+            google()
+            gradlePluginPortal()
+        }
+        repositories.each { println "Repository configured: $it.name Owner: ${it.getClass().name}" }
+    }
+}
+
+rootProject.name = "plugin-composeRollup"
+include ':app'
+project(':app').projectDir = "$rootDir/app" as File
