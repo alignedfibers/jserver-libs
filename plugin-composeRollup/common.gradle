@@ -1,0 +1,33 @@
+ext.useJavaPluginConfig = { project ->
+    project.apply plugin: 'java'
+    project.apply plugin: 'idea'
+    project.apply plugin: 'maven-publish'
+    project.apply plugin: 'java-gradle-plugin'
+
+    project.java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(11) // Specify Java 11 or your required version
+        }
+        // Alternatively, set source and target compatibility
+        /*sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11*/
+    }
+    project.dependencies {
+        implementation gradleApi()
+        implementation localGroovy()
+        testImplementation 'junit:junit:4.13.2'
+        //testImplementation 'org.gradle.testkit'
+        testImplementation gradleTestKit()
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+        //testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    }
+    project.tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += "-Xlint:deprecation"
+    }
+    project.tasks.register("wrapper", Wrapper) {
+        //gradleVersion = "4.4.1"
+        gradleVersion = "7.0.2"
+    }
+
+}

@@ -1,0 +1,26 @@
+apply from: "$rootDir/common.gradle"
+useJavaPluginConfig(project)
+description =  'Compose Rollup Gradle Plugin'
+gradlePlugin{
+    plugins{
+        composeRollup{
+            id = 'dev.jtris.gradleplugins.composeRollup'
+            implementationClass = 'dev.jtris.gradleplugins.composeRollup'
+        }
+    }
+}
+
+publishing {
+    /*publications {
+        pluginMaven(MavenPublication) {
+            from components.java
+        }
+    }*/
+    /*repositories {
+        mavenLocal() // Publish to local repository
+    }*/
+}
+
+dependencies {
+    implementation 'org.testng:testng:6.9.6'
+}
