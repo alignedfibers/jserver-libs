@@ -10,20 +10,10 @@ ext.usejavapluginconfig = { project ->
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    project.repositories{
-        google()
-        mavenCentral()
-        jcenter()
-    }
     project.allprojects{
         apply plugin: 'java'
         apply plugin: 'idea'
         apply plugin: 'maven-publish'
-        repositories{
-            google()
-            mavenCentral()
-            jcenter()
-        }
         dependencies {
             testImplementation group: 'junit', name: 'junit', version: '4.12'
         }
@@ -36,7 +26,6 @@ ext.usejavapluginconfig = { project ->
         options.compilerArgs += "-Xlint:deprecation"
     }
     project.tasks.register("wrapper", Wrapper) {
-        //gradleVersion = "4.4.1"
         gradleVersion = "7.0.2"
     }
     /***
@@ -53,17 +42,17 @@ ext.usejavapluginconfig = { project ->
 
 
 ext.useandroidpluginconfig = { project ->
-    project.repositories{
+    /*project.repositories{
         google()
         mavenCentral()
         jcenter()
-    }
+    }*/
     project.allprojects{
         apply plugin: 'com.android.library'
         //apply plugin: 'org.jetbrains.kotlin.android'
         //apply plugin: 'com.android.application'
-        repositories{
-        }
+        /*repositories{
+        }*/
         dependencies {
             testImplementation 'junit:junit:4.13.2'
             androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {

@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenLocal()
         mavenCentral()
+        jcenter()
     }
     //includeBuild('plugin-composeRollup')
     dependencyResolutionManagement {

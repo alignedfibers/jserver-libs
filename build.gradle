@@ -21,9 +21,9 @@ subprojects {
 
 		// Check if the plugin-created "hello" task exists
 		if (tasks.findByName('hello')) {
-			println 'MyBinaryPlugin successfully created the "hello" task!'
+			println 'composeRollup successfully created the "hello" task!'
 		} else {
-			println 'MyBinaryPlugin did NOT create the "hello" task. Check your plugin configuration.'
+			println 'composeRollup did NOT create the "hello" task. Check your plugin configuration.'
 		}
 	}
 }*/
