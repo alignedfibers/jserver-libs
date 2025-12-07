@@ -1,4 +1,4 @@
-package jcifs.pac;
+package jcifs.pac.sun_compat.security.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

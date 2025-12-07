@@ -361,8 +361,8 @@ class Kerb5Context implements SSPContext {
      *
      */
 
-    private static final String OPENJDK_JGSS_INQUIRE_TYPE_CLASS = "jcifs.pac.InquireType";
-    private static final String OPENJDK_JGSS_EXT_GSSCTX_CLASS = "jcifs.pac.ExtendedGSSContext";
+    private static final String OPENJDK_JGSS_INQUIRE_TYPE_CLASS = "jcifs.pac.jgss_compat.InquireType";
+    private static final String OPENJDK_JGSS_EXT_GSSCTX_CLASS = "jcifs.pac.jgss_compat.ExtendedGSSContext";
 
     private static final String IBM_JGSS_INQUIRE_TYPE_CLASS = "com.ibm.security.jgss.InquireType";
     private static final String IBM_JGSS_EXT_GSSCTX_CLASS = "com.ibm.security.jgss.ExtendedGSSContext";

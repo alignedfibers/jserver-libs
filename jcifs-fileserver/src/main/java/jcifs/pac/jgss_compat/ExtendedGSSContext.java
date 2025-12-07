@@ -1,10 +1,8 @@
-package jcifs.pac;
+package jcifs.pac.jgss_compat;
 
-import jcifs.pac.InquireType;
 //import org.ietf.jgss.GSSContext;
-import jcifs.pac.GSSContext;
 //import org.ietf.jgss.GSSException;
-import jcifs.pac.GSSException;
+
 
 public interface ExtendedGSSContext extends GSSContext {
     Object inquireSecContext(InquireType var1) throws GSSException;

@@ -1,4 +1,4 @@
-package jcifs.pac;
+package jcifs.pac.jgss_compat;
 
 //import java.io.Serial;
 import java.util.Objects;
